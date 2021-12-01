@@ -17,7 +17,7 @@ const Register = ({registerUser}) => {
     const navigate = useHistory();
     useEffect(() => {
         if(currentUser){
-            navigate.push("/");
+            navigate.push("/home");
         }
     }, [currentUser, navigate]);
 

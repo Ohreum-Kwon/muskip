@@ -66,7 +66,7 @@ function App() {
       <div className="App">
         <Switch>
         
-            <UserRoute exact path="/" component={Home} />
+            <UserRoute exact path="/home" component={Home} />
             <Route exact path="/login">
               <Login loginUser = {loginUser}/>
             </Route> 

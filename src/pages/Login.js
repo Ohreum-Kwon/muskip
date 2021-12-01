@@ -19,7 +19,7 @@ const Login = ({loginUser}) => {
     const navigate = useHistory();
     useEffect(() => {
         if(currentUser){
-            navigate.push("/");
+            navigate.push("/home");
         }
     }, [currentUser, navigate]);
     const dispatch = useDispatch();
