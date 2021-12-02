@@ -2,6 +2,7 @@ import {BrowserRouter, Switch, Route } from "react-router-dom"
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
+import WebApp from "./pages/WebApp/WebApp";
 import UserRoute from "./components/UserRoute";
 import {useDispatch } from "react-redux"
 import React, {useEffect, useState} from 'react'
@@ -73,6 +74,9 @@ function App() {
             <Route exact path="/register">
               <Register registerUser={registerUser} />
             </Route> 
+            <Route exact path="/webapp">
+              <WebApp />
+            </Route>
         </Switch>
       </div>
     </BrowserRouter>
