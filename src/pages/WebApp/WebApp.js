@@ -1,4 +1,5 @@
 import React,{useEffect} from 'react'
+import SpotifyPlaylists from './components/SpotifyGetPlaylists/SpotifyPlaylists';
 import "./WebApp.css";
 
 const CLIENT_ID = "663640c06513442e87c51a2075806944"
@@ -11,13 +12,13 @@ const SCOPES_URL_PARAM = SCOPES.join(SPACE_DELIMITER);
 const getReturnedParamsFromSpotifyAuth = (hash) => {
     const stringAfterHashing = hash.substring(1);
     const paramsInUrl = stringAfterHashing.split("&");
-    const paramsSpliltUp = paramsInUrl.reduce((accumlator, currentValue) => {
+    const paramsSplitUp = paramsInUrl.reduce((accumlator, currentValue) => {
         console.log(currentValue);
         const [key, value] = currentValue.split("=");
         accumlator[key] = value;
         return accumlator;
     }, {});
-    return paramsSpliltUp;
+    return paramsSplitUp;
 }
 
 const WebApp = () => {
@@ -41,6 +42,7 @@ const WebApp = () => {
         <div className="container">
             <h1>This page is for login to Spotify</h1>
             <button onClick={handleLogin}>login to Spotify</button>
+            <SpotifyPlaylists />
         </div>
     )
 }
