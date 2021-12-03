@@ -5,7 +5,7 @@ import { useStateValue } from "./StateProvider";
 import SongRow from "./SongRow";
 
 function Body({ spotify }) {
-  const [{ discover_weekly }, dispatch] = useStateValue();
+  const [{ discover_weekly, work_playlist }, dispatch] = useStateValue();
 
   const playPlaylist = (id) => {
     spotify
