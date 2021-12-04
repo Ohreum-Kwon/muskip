@@ -9,7 +9,8 @@ function Login() {
         src="https://getheavy.com/wp-content/uploads/2019/12/spotify2019-830x350.jpg"
         alt=""
       />
-      <a href={accessUrl}>LOGIN TO SPOTIFY</a>
+      <h1>Muskip</h1>
+      <a href={accessUrl}>CONNECT TO SPOTIFY</a>
     </div>
   );
 }

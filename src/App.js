@@ -32,6 +32,13 @@ function App() {
         })
       );
 
+      s.getPlaylist("7t9D2WmBtjEBqA2zWsfKM6").then((response) =>
+      dispatch({
+        type: "SET_WORK_PLAYLIST",
+        work_playlist: response,
+      })
+    );
+
       s.getMyTopArtists().then((response) =>
         dispatch({
           type: "SET_TOP_ARTISTS",
