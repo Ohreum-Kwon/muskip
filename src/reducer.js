@@ -5,6 +5,7 @@ export const initialState = {
   playlists: [],
   spotify: null,
   discover_weekly: null,
+  work_playlist: null,
   top_artists: null,
   playing: false,
   item: null,
@@ -37,11 +38,11 @@ const reducer = (state, action) => {
         discover_weekly: action.discover_weekly,
       };
 
-      case "SET_WORK_PLAYLIST":
-        return {
-          ...state,
-          work_playlist: action.work_playlist,
-        };
+    case "SET_WORK_PLAYLIST":
+      return {
+        ...state,
+        work_playlist: action.work_playlist,
+      };
 
     case "SET_TOP_ARTISTS":
       return {

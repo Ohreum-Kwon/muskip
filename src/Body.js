@@ -4,7 +4,7 @@ import Header from "./Header";
 import { useStateValue } from "./StateProvider";
 import SongRow from "./SongRow";
 
-function Body({ spotify }) {
+function Body({ spotify }, state ) {
   const [{ discover_weekly, work_playlist }, dispatch] = useStateValue();
 
   const playPlaylist = (id) => {
@@ -48,12 +48,16 @@ function Body({ spotify }) {
   return (
     <div className="body">
       <Header spotify={spotify} />
-
-      <div className="body__songs">
-        {discover_weekly?.tracks.items.map((item) => (
-          <SongRow playSong={playSong} track={item.track} />
-        ))}
-      </div>
+        <div className="body__songs">
+          {discover_weekly?.tracks.items.map((item) => (
+            <SongRow playSong={playSong} track={item.track} />
+          ))}
+        </div>
+        <div className="body__songs">
+          {work_playlist?.tracks.items.map((item) => (
+            <SongRow playSong={playSong} track={item.track} />
+          ))}
+        </div>
     </div>
   );
 }
