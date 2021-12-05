@@ -48,29 +48,31 @@ function Footer({ spotify }) {
 
   const skipNext = () => {
     spotify.skipToNext();
+    console.log('skip button is clicked')
     spotify.getMyCurrentPlayingTrack().then((r) => {
       dispatch({
         type: "SET_ITEM",
         item: r.item,
       });
-      dispatch({
-        type: "SET_PLAYING",
-        playing: true,
-      });
+      // dispatch({
+      //   type: "SET_PLAYING",
+      //   playing: true,
+      // });
     });
   };
 
   const skipPrevious = () => {
     spotify.skipToPrevious();
+    console.log('prev button is clicked')
     spotify.getMyCurrentPlayingTrack().then((r) => {
       dispatch({
         type: "SET_ITEM",
         item: r.item,
       });
-      dispatch({
-        type: "SET_PLAYING",
-        playing: true,
-      });
+      // dispatch({
+      //   type: "SET_PLAYING",
+      //   playing: true,
+      // });
     });
   };
 
@@ -97,7 +99,7 @@ function Footer({ spotify }) {
 
       <div className="footer__center">
         <ShuffleIcon className="footer__green" />
-        <SkipPreviousIcon onClick={skipNext} className="footer__icon" />
+        <SkipPreviousIcon onClick={skipPrevious}  className="footer__icon" />
         {playing ? (
           <PauseCircleOutlineIcon
             onClick={handlePlayPause}
@@ -111,7 +113,7 @@ function Footer({ spotify }) {
             className="footer__icon"
           />
         )}
-        <SkipNextIcon onClick={skipPrevious} className="footer__icon" />
+        <SkipNextIcon onClick={skipNext}  className="footer__icon" />
         <RepeatIcon className="footer__green" />
       </div>
       <div className="footer__right">

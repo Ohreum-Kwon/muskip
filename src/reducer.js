@@ -37,6 +37,12 @@ const reducer = (state, action) => {
         discover_weekly: action.discover_weekly,
       };
 
+    case "SET_MY_LIST":
+      return {
+        ...state,
+        my_list: action.my_list,
+      }
+
     case "SET_TOP_ARTISTS":
       return {
         ...state,

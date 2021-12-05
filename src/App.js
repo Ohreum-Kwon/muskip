@@ -16,7 +16,7 @@ function App() {
     const hash = getTokenFromResponse();
     window.location.hash = "";
     let _token = hash.access_token;
-
+    console.log("token ", _token)
     if (_token) {
       s.setAccessToken(_token);
 
@@ -32,12 +32,20 @@ function App() {
         })
       );
 
-      s.getMyTopArtists().then((response) =>
-        dispatch({
-          type: "SET_TOP_ARTISTS",
-          top_artists: response,
-        })
-      );
+      s.getPlaylist("7t9D2WmBtjEBqA2zWsfKM6").then((response) =>
+      dispatch({
+        type: "SET_MY_LIST",
+        my_list: response,
+      })
+    );
+      
+
+      // s.getMyTopArtists().then((response) =>
+      //   dispatch({
+      //     type: "SET_TOP_ARTISTS",
+      //     top_artists: response,
+      //   })
+      // );
 
       dispatch({
         type: "SET_SPOTIFY",
@@ -59,6 +67,14 @@ function App() {
       });
     }
   }, [token, dispatch]);
+  
+  s.getUser('ray')
+    .then(function(data) {
+      console.log('some info about this user', data.body);
+    }, function(err){
+      console.log("something went wrong", err);
+    })
+
 
   return (
     <div className="app">

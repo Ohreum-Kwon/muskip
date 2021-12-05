@@ -18,7 +18,7 @@ function Sidebar() {
         <h4>{user?.display_name}</h4>
         </div>
       <SidebarOption Icon={HomeIcon} option="Home" />
-      <SidebarOption Icon={ProfileIcon} option="Profile" />
+      <SidebarOption Icon={ProfileIcon} option="Skip Setter" />
       <br />
       <strong className="sidebar__title">PLAYLISTS</strong>
       <hr />

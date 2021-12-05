@@ -5,7 +5,7 @@ import { useStateValue } from "./StateProvider";
 import SongRow from "./SongRow";
 
 function Body({ spotify }) {
-  const [{ discover_weekly }, dispatch] = useStateValue();
+  const [{ discover_weekly, my_list }, dispatch] = useStateValue();
 
   const playPlaylist = (id) => {
     spotify
@@ -50,7 +50,7 @@ function Body({ spotify }) {
       <Header spotify={spotify} />
 
       <div className="body__songs">
-        {discover_weekly?.tracks.items.map((item) => (
+        {my_list?.tracks.items.map((item) => (
           <SongRow playSong={playSong} track={item.track} />
         ))}
       </div>
