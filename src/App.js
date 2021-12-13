@@ -20,27 +20,17 @@ function App() {
     if (_token) {
       s.setAccessToken(_token);
 
-
-
-      
       dispatch({
         type: "SET_TOKEN",
         token: _token,
       });
 
-      s.getPlaylist("37i9dQZF1EfQuqi3vRoAZ3").then((response) =>
+      s.getPlaylist("5LnhXaBy0eDgaoRGe7zm2L").then((response) =>
         dispatch({
-          type: "SET_DISCOVER_WEEKLY",
-          discover_weekly: response,
+          type: "SET_PLAYLIST",
+          playlist: response,
         })
       );
-
-      s.getPlaylist("4DUym6ZVowIp0xnNYj0mnD").then((response) =>
-      dispatch({
-        type: "SET_WORK_PLAYLIST",
-        work_playlist: response,
-      })
-    );
 
       s.getMyTopArtists().then((response) =>
         dispatch({
@@ -71,10 +61,10 @@ function App() {
   }, [token, dispatch]);
 
   return (
-    <div className="app">
-      {!token && <Login />}
-      {token && <Player spotify={s} />}
-    </div>
+      <div className="app">
+          {!token && <Login />}
+          {token && <Player spotify={s} />}
+      </div>
   );
 }
 

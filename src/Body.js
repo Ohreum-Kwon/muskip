@@ -1,16 +1,15 @@
 import React from "react";
 import "./Body.css";
-import Header from "./Header";
 import { useStateValue } from "./StateProvider";
 import SongRow from "./SongRow";
 
-function Body({ spotify }) {
-  const [{ discover_weekly, work_playlist }, dispatch] = useStateValue();
+function Body({ spotify }, state ) {
+  const [{ playlist }, dispatch] = useStateValue();
 
   const playPlaylist = (id) => {
     spotify
       .play({
-        context_uri: `spotify:playlist:37i9dQZF1EfQuqi3vRoAZ3`,
+        context_uri: `spotify:playlist:5LnhXaBy0eDgaoRGe7zm2L`,
       })
       .then((res) => {
         spotify.getMyCurrentPlayingTrack().then((r) => {
@@ -47,13 +46,11 @@ function Body({ spotify }) {
 
   return (
     <div className="body">
-      <Header spotify={spotify} />
-
-      <div className="body__songs">
-        {discover_weekly?.tracks.items.map((item) => (
-          <SongRow playSong={playSong} track={item.track} />
-        ))}
-      </div>
+        <div className="body__songs">
+          {playlist?.tracks.items.map((item) => (
+            <SongRow playSong={playSong} track={item.track} />
+          ))}
+        </div>
     </div>
   );
 }
