@@ -1,6 +1,9 @@
+//This file handles the play, pause , skip ,previous buttons within the sidebar 
 import React from "react";
 import "./SidebarOption.css";
 
+
+// sidebar function , has icon , buttons 
 function SidebarOption({ option = "test", Icon }) {
 
   const handlePlaylist = () => {
