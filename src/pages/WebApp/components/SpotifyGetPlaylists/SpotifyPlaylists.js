@@ -16,7 +16,8 @@ const SpotifyPlaylists = () => {
     }, []);
 
     const handleGetPlayLists = () => {
-        axios.get(PLAYLISTS_ENDPOINT, {
+        axios
+        .get(PLAYLISTS_ENDPOINT, {
             headers: {
                 Authorization: "Bearer " + token,
             }, 
