@@ -1,3 +1,4 @@
+// This file combines sidebar , body and header components 
 import React from "react";
 import Header from "./Header";
 import "./Player.css";
@@ -9,9 +10,9 @@ function Player({ spotify }) {
     <div className="player">
       <div className="player__body">
         <Sidebar />
-        <Body spotify={spotify} />
+        <Body spotify={spotify} />           
       </div>
-      <Header spotify={spotify} />
+      <Header spotify={spotify} />            
     </div>
   );
 }
