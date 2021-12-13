@@ -1,3 +1,5 @@
+// This file handles in showing the sidebar within our application 
+// It will show song name , playlist , and the song image
 import React from "react";
 import "./Sidebar.css";
 import SidebarOption from "./SidebarOption";
@@ -5,6 +7,7 @@ import { Avatar } from "@material-ui/core";
 import { getTokenFromResponse } from "./spotify";
 import { useStateValue } from "./StateProvider";
 
+//sidebar function , includes playlist, song name , image 
 function Sidebar() {
   const [{ playlists, user }, dispatch] = useStateValue();
   console.log(playlists);
