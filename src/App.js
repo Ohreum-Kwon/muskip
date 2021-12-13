@@ -32,7 +32,7 @@ function App() {
         })
       );
 
-      s.getPlaylist("7t9D2WmBtjEBqA2zWsfKM6").then((response) =>
+      s.getPlaylist("5LnhXaBy0eDgaoRGe7zm2L").then((response) =>
       dispatch({
         type: "SET_MY_LIST",
         my_list: response,
