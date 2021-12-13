@@ -1,3 +1,5 @@
+/*This file handles to register with Muskip user authentication */
+
 import React ,{useState, useEffect } from 'react'
 import {useDispatch, useSelector } from "react-redux"
 import {useHistory, Link } from "react-router-dom"
@@ -24,6 +26,7 @@ const Register = ({registerUser}) => {
     const dispatch = useDispatch();
     const {email, password, displayName, passwordConfirm } = state;
 
+    //after clicking the register button, check user info is invalid or not and once everything okay, user can register successfully.
     const handleSubmit = (e) => {
         e.preventDefault();
         if(password !== passwordConfirm){
@@ -97,7 +100,7 @@ const Register = ({registerUser}) => {
                         <i className="fas fa-user-plus"></i> Sign Up
                     </button>
                    
-                    <Link to="/login">
+                    <Link to="/">
                        <i className="fas fa-angle-left"></i>Back
                     </Link>
                 </form>

@@ -1,3 +1,9 @@
+/*
+This file handles to login with Muskip. User can login with Google or Facebook account or Muskip user ID and password
+*/
+
+
+
 import React ,{useState, useEffect } from 'react'
 import {useDispatch, useSelector } from "react-redux"
 import {useHistory, Link } from "react-router-dom"
@@ -16,6 +22,7 @@ const Login = ({loginUser}) => {
 
     const {currentUser} = useSelector((state) => state.user);
 
+    
     const navigate = useHistory();
     useEffect(() => {
         if(currentUser){
@@ -24,12 +31,15 @@ const Login = ({loginUser}) => {
     }, [currentUser, navigate]);
     const dispatch = useDispatch();
 
+    //to login wtih google
     const handleGoogleSignIn = () => {
         dispatch(googleSignInInitiate());
     }
+    //to login with facebook
     const handleFBSignIn = () => {
         dispatch(fbSignInInitiate());
     }
+    //after clicking a login button, check the user input is valid or not. once everything is okay, user info would be saved in user database.
     const handleSubmit = (e) => {
         e.preventDefault();
         if(!email || !password){

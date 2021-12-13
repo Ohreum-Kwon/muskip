@@ -1,3 +1,4 @@
+//this page handles to show a page is redirecting something for user
 import React, {useState, useEffect } from 'react'
 import {useHistory } from "react-router-dom"
 

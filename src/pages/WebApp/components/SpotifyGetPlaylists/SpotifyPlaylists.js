@@ -15,6 +15,7 @@ const SpotifyPlaylists = () => {
         }
     }, []);
 
+    //getting playlists
     const handleGetPlayLists = () => {
         axios
         .get(PLAYLISTS_ENDPOINT, {

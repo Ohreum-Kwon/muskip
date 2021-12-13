@@ -17,6 +17,7 @@ function App() {
   
   const [user, setUser2] = useState({});
 
+  //authenticating user info on the register page
   const registerUser = ({ email, password }) => {
     fire
     .auth()
@@ -33,7 +34,8 @@ function App() {
       }
     });
   }
-
+  
+  //authenticating user info on the login page
   const loginUser = ({ email, password}) => {
     fire
     .auth()
@@ -68,7 +70,7 @@ function App() {
         <Switch>
         
             <UserRoute exact path="/home" component={Home} />
-            <Route exact path="/login">
+            <Route exact path="/">
               <Login loginUser = {loginUser}/>
             </Route> 
             <Route exact path="/register">
