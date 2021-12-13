@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "./Footer";
+import Header from "./Header";
 import "./Player.css";
 import Sidebar from "./Sidebar";
 import Body from "./Body";
@@ -11,7 +11,7 @@ function Player({ spotify }) {
         <Sidebar />
         <Body spotify={spotify} />
       </div>
-      <Footer spotify={spotify} />
+      <Header spotify={spotify} />
     </div>
   );
 }

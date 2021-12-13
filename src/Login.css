@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=MuseoModerno');
+
+@font-face {
+  font-family: 'MuseoModerno:400', cursive;
+  src: url('https://fonts.googleapis.com/css?family=MuseoModerno');
+}
+
 .login {
   display: grid;
-  background-color: black;
+  background-color: #585858;
   height: 100vh;
   place-items: center;
 }
@@ -15,5 +22,5 @@
   padding: 20px;
   border-radius: 99px;
   font-weight: 800;
-  background-color: #1db954;
+  background-color: rgb(209, 7, 7);
 }

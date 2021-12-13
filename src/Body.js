@@ -1,6 +1,5 @@
 import React from "react";
 import "./Body.css";
-import Header from "./Header";
 import { useStateValue } from "./StateProvider";
 import SongRow from "./SongRow";
 
@@ -47,7 +46,6 @@ function Body({ spotify }, state ) {
 
   return (
     <div className="body">
-      <Header spotify={spotify} />
         <div className="body__songs">
           {discover_weekly?.tracks.items.map((item) => (
             <SongRow playSong={playSong} track={item.track} />

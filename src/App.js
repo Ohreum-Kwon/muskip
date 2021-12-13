@@ -68,10 +68,10 @@ function App() {
   }, [token, dispatch]);
 
   return (
-    <div className="app">
-      {!token && <Login />}
-      {token && <Player spotify={s} />}
-    </div>
+      <div className="app">
+          {!token && <Login />}
+          {token && <Player spotify={s} />}
+      </div>
   );
 }
 
