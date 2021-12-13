@@ -1,3 +1,4 @@
+/* This file handles displaying login page components and redirects to spotify page */
 import React from "react";
 import "./Login.css";
 import { accessUrl } from "./spotify";

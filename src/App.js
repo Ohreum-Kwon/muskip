@@ -1,3 +1,4 @@
+/* This file handles running the whole application */
 import React, { useEffect } from "react";
 import SpotifyWebApi from "spotify-web-api-js";
 import { useStateValue } from "./StateProvider";
@@ -6,6 +7,7 @@ import { getTokenFromResponse } from "./spotify";
 import "./App.css";
 import Login from "./Login";
 
+// get Spotify API
 const s = new SpotifyWebApi();
 
 function App() {
@@ -17,6 +19,7 @@ function App() {
     window.location.hash = "";
     let _token = hash.access_token;
 
+    // set access token
     if (_token) {
       s.setAccessToken(_token);
 
@@ -25,6 +28,7 @@ function App() {
         token: _token,
       });
 
+      // get playlist using playlist token
       s.getPlaylist("5LnhXaBy0eDgaoRGe7zm2L").then((response) =>
         dispatch({
           type: "SET_PLAYLIST",
@@ -32,6 +36,7 @@ function App() {
         })
       );
 
+      // get top artists from spotify
       s.getMyTopArtists().then((response) =>
         dispatch({
           type: "SET_TOP_ARTISTS",
@@ -44,6 +49,7 @@ function App() {
         spotify: s,
       });
 
+      // get user information from spotify
       s.getMe().then((user) => {
         dispatch({
           type: "SET_USER",
@@ -51,6 +57,7 @@ function App() {
         });
       });
 
+      // get user playlist from spotify
       s.getUserPlaylists().then((playlists) => {
         dispatch({
           type: "SET_PLAYLISTS",

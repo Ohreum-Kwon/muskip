@@ -1,3 +1,4 @@
+/* This file handles listing the songs from the playlist */
 import React from "react";
 import "./SongRow.css";
 

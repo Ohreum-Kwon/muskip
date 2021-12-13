@@ -1,3 +1,4 @@
+/* This file handles the functionalities in header of the main page */
 import React, { useEffect } from "react";
 import { useStateValue } from "./StateProvider";
 import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
@@ -9,6 +10,7 @@ import "./Header.css";
 function Header({ spotify }) {
   const [{ token, item, playing }, dispatch] = useStateValue();
 
+  // get current playback state from spotify
   useEffect(() => {
     spotify.getMyCurrentPlaybackState().then((r) => {
       console.log(r);
@@ -25,6 +27,7 @@ function Header({ spotify }) {
     });
   }, [spotify]);
 
+  // function to handles play and pause button
   const handlePlayPause = () => {
     if (playing) {
       spotify.pause();
@@ -41,6 +44,7 @@ function Header({ spotify }) {
     }
   };
 
+  // function to skip to the next song
   const skipNext = () => {
     spotify.skipToNext();
     spotify.getMyCurrentPlayingTrack().then((r) => {
@@ -55,6 +59,7 @@ function Header({ spotify }) {
     });
   };
 
+  // function to skip to previous song
   const skipPrevious = () => {
     spotify.skipToPrevious();
     spotify.getMyCurrentPlayingTrack().then((r) => {
