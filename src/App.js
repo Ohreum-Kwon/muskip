@@ -25,19 +25,12 @@ function App() {
         token: _token,
       });
 
-      s.getPlaylist("37i9dQZF1EfQuqi3vRoAZ3").then((response) =>
+      s.getPlaylist("5LnhXaBy0eDgaoRGe7zm2L").then((response) =>
         dispatch({
-          type: "SET_DISCOVER_WEEKLY",
-          discover_weekly: response,
+          type: "SET_PLAYLIST",
+          playlist: response,
         })
       );
-
-      s.getPlaylist("5ybl8jVahNI7Kqf80JLN1S").then((response) =>
-      dispatch({
-        type: "SET_WORK_PLAYLIST",
-        work_playlist: response,
-      })
-    );
 
       s.getMyTopArtists().then((response) =>
         dispatch({

@@ -91,7 +91,7 @@ function Header({ spotify }) {
       </div>
 
       <div className="header__center">
-        <SkipPreviousIcon onClick={skipNext} className="header__icon" />
+        <SkipPreviousIcon onClick={skipPrevious} className="header__icon" />
         {playing ? (
           <PauseCircleOutlineIcon
             onClick={handlePlayPause}
@@ -105,7 +105,7 @@ function Header({ spotify }) {
             className="footer__icon"
           />
         )}
-        <SkipNextIcon onClick={skipPrevious} className="header__icon" />
+        <SkipNextIcon onClick={skipNext} className="header__icon" />
       </div>
       <div className="header__right">
         <img

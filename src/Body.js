@@ -4,12 +4,12 @@ import { useStateValue } from "./StateProvider";
 import SongRow from "./SongRow";
 
 function Body({ spotify }, state ) {
-  const [{ discover_weekly, work_playlist }, dispatch] = useStateValue();
+  const [{ playlist }, dispatch] = useStateValue();
 
   const playPlaylist = (id) => {
     spotify
       .play({
-        context_uri: `spotify:playlist:37i9dQZF1EfQuqi3vRoAZ3`,
+        context_uri: `spotify:playlist:5LnhXaBy0eDgaoRGe7zm2L`,
       })
       .then((res) => {
         spotify.getMyCurrentPlayingTrack().then((r) => {
@@ -47,12 +47,7 @@ function Body({ spotify }, state ) {
   return (
     <div className="body">
         <div className="body__songs">
-          {discover_weekly?.tracks.items.map((item) => (
-            <SongRow playSong={playSong} track={item.track} />
-          ))}
-        </div>
-        <div className="body__songs">
-          {work_playlist?.tracks.items.map((item) => (
+          {playlist?.tracks.items.map((item) => (
             <SongRow playSong={playSong} track={item.track} />
           ))}
         </div>
