@@ -65,6 +65,14 @@ function App() {
           playlists,
         });
       });
+
+      // s.getMyCurrentPlayingTrack()
+      //   .then(function(data){
+      //     console.log('now playing: ' + data.body.item.name);
+      //   }, function(e){
+      //     console.log('something went wrong', e)
+      //   })
+
     }
   }, [token, dispatch]);
   

@@ -2,10 +2,16 @@ import React from "react";
 import "./SidebarOption.css";
 
 function SidebarOption({ option = "test", Icon }) {
+  
+  const handlePlaylist = () => {
+    console.log('playlist is clicked ' + option)
+    
+  }
+
   return (
     <div className="sidebarOption">
       {Icon && <Icon className="sidebarOption__icon" />}
-      {Icon ? <h4>{option}</h4> : <p>{option}</p>}
+      {Icon ? <h4>{option}</h4> : <p onClick={handlePlaylist}>{option}</p>}
     </div>
   );
 }

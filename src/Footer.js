@@ -113,7 +113,7 @@ function Footer({ spotify }) {
             className="footer__icon"
           />
         )}
-        <SkipNextIcon onClick={skipNext}  className="footer__icon" />
+        <SkipNextIcon  onClick={skipNext}  className="footer__icon" />
         <RepeatIcon className="footer__green" />
       </div>
       <div className="footer__right">
